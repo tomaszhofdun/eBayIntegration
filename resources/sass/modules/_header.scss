@@ -1,0 +1,25 @@
+.header {
+    color: #fff;
+    background: $independence;
+    .container {
+        @include atMedium {
+            display: flex;
+        }
+    }
+    i {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__logout {
+        background: $warning;
+        border: none;
+        padding: 10px;
+        color: #fff;
+        &:hover {
+            background: darken($warning, 10);
+            cursor: pointer;
+        }
+    }
+}

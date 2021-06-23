@@ -1,0 +1,30 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$raisin-black: #272838;
+$independence: #5d536b;
+// $chinese-violet: #7d6b91;
+// $blue-bell: #989fce;
+$steel-blue: #347fc4;
+$warning: #d63230;
+$deep-saffron: #f39237;
+$green: #35ff69;
+
+//Gradients
+
+$nav-gradient: linear-gradient(
+    185deg,
+    rgba(93, 83, 107, 1) 0%,
+    rgba(39, 40, 56, 1) 82%
+);
+$nav-gradient--darken: linear-gradient(
+    185deg,
+    rgb(71, 63, 82) 0%,
+    rgb(32, 33, 46) 82%
+);

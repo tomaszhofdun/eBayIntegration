@@ -1,0 +1,24 @@
+.sidebar {
+    background: $raisin-black;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    font-size: 2rem;
+    @include atMedium {
+        font-size: 1.2rem;
+        // max-width: 300px;
+    }
+    li {
+        background: rgb(93, 83, 107);
+        background: $nav-gradient;
+        padding: 10px;
+        &:hover {
+            background: rgb(93, 83, 107);
+            background: $nav-gradient--darken;
+        }
+
+        span {
+            float: right;
+        }
+    }
+}

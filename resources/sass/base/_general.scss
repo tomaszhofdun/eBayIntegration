@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: $font-family-sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    list-style: none;
+}
+textarea {
+    max-width: 100%;
+}
+button {
+    cursor: pointer;
+}
+i {
+    margin: 0 10px;
+}
+.h-100 {
+    height: 100vh;
+}
+.total-centerize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    color: $warning;
+    font-size: 20px;
+}
+
+.avatar-icon {
+    padding: 10px;
+    background: $deep-saffron;
+    text-shadow: 2px 2px #646464;
+    font-size: 1.6rem;
+    line-height: 0.05;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.spinner {
+    animation-duration: 0.7s;
+    animation-name: rotate360;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    &--lg {
+        font-size: 50px;
+    }
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    color: #fff;
+    &--blue {
+        background: $steel-blue;
+        &:hover {
+            background: darken($color: $steel-blue, $amount: 14);
+        }
+    }
+    &--orange {
+        background: $deep-saffron;
+        &:hover {
+            background: darken($color: $deep-saffron, $amount: 14);
+        }
+    }
+    &--green {
+        background: $green;
+        &:hover {
+            background: darken($color: $green, $amount: 14);
+        }
+    }
+}

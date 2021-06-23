@@ -1,0 +1,13 @@
+@mixin atMedium {
+    @media (min-width: 530px) {
+        @content;
+    }
+}
+
+@mixin clearfix {
+    &::after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+}
