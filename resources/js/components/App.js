@@ -20,12 +20,14 @@ function App() {
             avatar: localStorage.getItem("appAvatar"),
             hashEmail: localStorage.getItem("hashEmail")
         },
+        sideBarIsVisible: true,
         flashMessage: ""
     };
     function ourReducer(state, action) {
         switch (action.type) {
             case "login":
                 return {
+                    ...state,
                     loggedIn: true,
                     user: action.data
                 };
@@ -40,6 +42,17 @@ function App() {
                 return {
                     ...state,
                     flashMessage: { text: action.value, color: action.color }
+                };
+
+            case "hideSidebar":
+                return {
+                    ...state,
+                    sideBarIsVisible: false
+                };
+            case "showSidebar":
+                return {
+                    ...state,
+                    sideBarIsVisible: true
                 };
 
             default:

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\EbayToken;
+use App\Item;
+use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 
 
@@ -96,5 +99,37 @@ class EbayImportItemsController extends Controller
         $xml = simplexml_load_string($result->getBody());
         
         return json_encode($xml);
+    }
+    public function save(Request $request)
+    {
+      
+      try {
+   
+      $items = $request->all();
+
+      foreach ($items['items'] as $key) {
+
+        $resp = Item::create([
+          'title' => $key['Title'], 
+          'ebay_item_id' =>$key['ItemID'], 
+          'sku' =>$key['SKU'], 
+          'quantity' =>$key['QuantityAvailable'], 
+          'price' =>$key['BuyItNowPrice']
+        ]);
+        
+      }
+
+      if(boolval($resp)) {
+        return "Success";
+      }
+      else {
+        return "Fail";
+      }
+
+
+    } catch (Exception  $ex) {
+        return $ex;
+    }
+
     }
 }

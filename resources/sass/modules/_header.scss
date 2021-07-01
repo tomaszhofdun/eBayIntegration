@@ -1,9 +1,16 @@
 .header {
     color: #fff;
     background: $independence;
+    &__go-back-icon {
+        float: left;
+        top: 2px;
+        position: relative;
+        font-size: 36px;
+    }
     .container {
         @include atMedium {
             display: flex;
+            justify-content: right;
         }
     }
     i {

@@ -5,6 +5,7 @@ function Logout() {
     const appDispatch = useContext(DispatchContext);
 
     function handleLogout() {
+        // appDispatch({ type: "showSidebar" });
         appDispatch({ type: "logout" });
         appDispatch({
             type: "flashMessage",

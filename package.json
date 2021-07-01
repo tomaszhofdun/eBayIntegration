@@ -33,6 +33,7 @@
         "normalize.css": "^8.0.1",
         "query-string": "^7.0.0",
         "react-router-dom": "^5.2.0",
+        "react-tooltip": "^4.2.21",
         "use-immer": "^0.5.2"
     }
 }

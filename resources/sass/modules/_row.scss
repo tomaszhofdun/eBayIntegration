@@ -4,6 +4,7 @@
         // float: left;
         // width: 33.33%;
         &--medium {
+            background: $green;
             @include atMedium {
                 float: left;
                 width: 33.33%;
@@ -14,6 +15,7 @@
         // float: left;
         // width: 50%;
         &--medium {
+            background: $deep-saffron;
             @include atMedium {
                 float: left;
                 width: 50%;
@@ -24,6 +26,7 @@
         // float: left;
         // width: 66.66%;
         &--medium {
+            background: $warning;
             @include atMedium {
                 float: left;
                 width: 66.66%;

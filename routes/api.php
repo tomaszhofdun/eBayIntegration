@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\AppSettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
-use App\Http\Controllers\ebayController;
-use App\Http\Controllers\EbayTokenController;
 use App\Http\Controllers\EbayImportItemsController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,12 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 // Protected Routes
 Route::group(['middleware' => 'auth:sanctum'], function() {
+    // Users
+    Route::post('/logout',[ AuthController::class, 'logout'] );
     //Inventory
     Route::resource('items', 'ItemController');
     Route::get('/items/s/{name}',[ ItemController::class, 'search']);
-    Route::post('/logout',[ AuthController::class, 'logout'] );
-    ///ebay
+    ///Ebay api routes
     Route::get('ebay/import-items', [ EbayImportItemsController::class, 'import']);
+    Route::post('ebay/import-items', [ EbayImportItemsController::class, 'save']);
     //Settings
     Route::resource('settings/ebay-token', 'EbayTokenController');
     Route::resource('settings/ebay-sessionId', 'EbaySessionIdController');
@@ -40,6 +38,7 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
 // Unprotected Routes
 
+// Users
 Route::post('/register',[ AuthController::class, 'register'] );
 Route::post('/login',[ AuthController::class, 'login'] );
 

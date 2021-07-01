@@ -38,6 +38,9 @@ i {
     display: flex;
     justify-content: center;
     align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
 }
 
 .error-message {
@@ -63,6 +66,9 @@ i {
     &--lg {
         font-size: 50px;
     }
+    &--sm {
+        font-size: 24px;
+    }
 }
 
 .btn {
@@ -85,6 +91,12 @@ i {
         background: $green;
         &:hover {
             background: darken($color: $green, $amount: 14);
+        }
+    }
+    &--red {
+        background: $warning;
+        &:hover {
+            background: darken($color: $warning, $amount: 14);
         }
     }
 }

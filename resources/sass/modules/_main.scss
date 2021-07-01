@@ -1,26 +1,60 @@
 .main {
-    padding: 30px;
+    position: relative;
+    @include atMedium {
+        padding: 30px;
+    }
 
     &__options {
         margin-top: 30px;
-        // text-align: left;
         display: flex;
+        align-items: flex-start;
+
+        & .btn--icon {
+            position: relative;
+            &::after {
+                content: url("/img/up-arrow.png");
+                position: absolute;
+                bottom: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #000;
+            }
+        }
     }
-    &__table {
-        position: absolute;
-        left: 460px;
-        top: 200px;
-    }
+
     &__ebay-logo {
         width: 100px;
     }
-    &__form {
-        margin-top: 50px;
+    form {
+        // margin-top: 50px;
+        input {
+            margin: 10px;
+            display: inline-block;
+        }
     }
     &__token {
         width: 100%;
     }
     &__save-btn {
         float: right;
+    }
+}
+.table {
+    position: absolute;
+    // left: 460px;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &__head {
+        background: darken($color: $green, $amount: 30);
+        color: #fff;
+    }
+    tr:nth-child(even) {
+        background: #e4e4e4;
+    }
+
+    th {
+        padding: 2px;
     }
 }

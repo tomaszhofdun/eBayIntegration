@@ -4,20 +4,20 @@
         font-size: 3rem;
         color: $steel-blue;
     }
-}
-input {
-    font-size: 1.3rem;
-    padding: 5px;
-    margin: 10px;
-    display: block;
-    margin: 10px auto;
-    &.submit {
-        background: $steel-blue;
-        color: #fff;
-        border: none;
-        padding: 10px;
-    }
-    &.loading {
-        background: rgb(179, 179, 179);
+    input {
+        font-size: 1.3rem;
+        padding: 5px;
+        margin: 10px;
+        display: block;
+        margin: 10px auto;
+        &.submit {
+            background: $steel-blue;
+            color: #fff;
+            border: none;
+            padding: 10px;
+        }
+        &.loading {
+            background: rgb(179, 179, 179);
+        }
     }
 }

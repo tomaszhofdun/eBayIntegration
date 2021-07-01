@@ -10,7 +10,7 @@ function Options() {
 
     return (
         <>
-            <div className="row__8--medium">
+            <div className="">
                 <div className="container">
                     <main className="main">
                         <h4>Importowanie aukcji jako produktów</h4>

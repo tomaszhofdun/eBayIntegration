@@ -29,6 +29,7 @@ function Login() {
                     hashEmail: md5(response.data.avatar).toString()
                 };
                 appDispatch({ type: "login", data: hashed });
+                appDispatch({ type: "flashMessage", value: false });
             } else {
                 console.log(response.data.response);
                 setResponse(response);
