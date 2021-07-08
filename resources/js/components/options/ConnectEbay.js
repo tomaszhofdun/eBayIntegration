@@ -36,7 +36,7 @@ function ConnectEbay() {
                     }
                     if (resp.data.Ack == "Success") {
                         setState(draft => {
-                            draft.connected = "true";
+                            draft.connected = true;
                         });
                         appDispatch({
                             type: "flashMessage",
@@ -98,10 +98,10 @@ function ConnectEbay() {
 
     return (
         <button
-            disabled={state.connected}
+            disabled={state.connected && true}
             className={
                 "btn  " +
-                (state.connected == "true" ? "btn--green" : "btn--orange")
+                (state.connected == true ? "btn--green" : "btn--orange")
             }
             onClick={handleConnectChannel}
         >

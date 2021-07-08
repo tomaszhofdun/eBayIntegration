@@ -5,7 +5,7 @@ import Products from "./Products";
 import Options from "./Options";
 
 function Content() {
-    const { path, url } = useRouteMatch();
+    const { path } = useRouteMatch();
     return (
         <Switch>
             <Route path={`${path}/products`}>

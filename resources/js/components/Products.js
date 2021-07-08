@@ -26,65 +26,74 @@ function Products() {
 
     return (
         <>
-            <div className="">
-                <div className="container">
-                    <main className="main h-100">
-                        <div className="row">
-                            <div className="row__4--medium">
-                                <form>
-                                    <input
-                                        type="text"
-                                        name="title"
-                                        id="title"
-                                    />
+            <div className="container">
+                <main className="main h-100">
+                    <div className="row">
+                        <div className="row__4--medium">
+                            <form className="main__add-item">
+                                <input
+                                    type="text"
+                                    name="title"
+                                    id="title"
+                                    placeholder="title"
+                                />
 
-                                    <div className="row">
-                                        <div className="row__4--medium">
-                                            <input
-                                                type="text"
-                                                name="sku"
-                                                id="sku"
-                                            />
-                                        </div>
-                                        <div className="row__4--medium">
-                                            <input
-                                                type="text"
-                                                name="quantity"
-                                                id="quantity"
-                                            />
-                                        </div>
-                                        <div className="row__4--medium">
-                                            <input
-                                                type="text"
-                                                name="price"
-                                                id="price"
-                                            />
-                                        </div>
+                                <div className="row">
+                                    <div className="row__4">
+                                        <input
+                                            type="text"
+                                            name="sku"
+                                            id="sku"
+                                            placeholder="sku"
+                                        />
                                     </div>
-
-                                    <button className="btn btn--blue">
-                                        Add new
-                                    </button>
-                                </form>
-                                ;
-                            </div>
-
-                            <div className="row__8--medium">
-                                {isLoading && (
-                                    <div className="total-centerize h-100">
-                                        <LoadingIcon size="lg" />
+                                    <div className="row__4">
+                                        <input
+                                            type="number"
+                                            name="quantity"
+                                            id="quantity"
+                                            placeholder="quantity"
+                                        />
                                     </div>
-                                )}
-                                {items.map(item => (
-                                    <p>
-                                        {item.title} <span>{item.sku}</span>{" "}
-                                        <span>{item.ebay_item_id}</span>
-                                    </p>
-                                ))}
-                            </div>
+                                    <div className="row__4">
+                                        <input
+                                            type="number"
+                                            name="price"
+                                            id="price"
+                                            placeholder="price"
+                                        />
+                                    </div>
+                                </div>
+
+                                <button className="btn btn--blue">
+                                    Add new
+                                </button>
+                            </form>
                         </div>
-                    </main>
-                </div>
+
+                        <div className="search-form">
+                            <input
+                                type="search"
+                                name="search"
+                                id="search"
+                                placeholder="ENTER TEXT TO SEARCH..."
+                            />
+                        </div>
+                        <div className="row__8--medium">
+                            {isLoading && (
+                                <div className="h-100">
+                                    <LoadingIcon size="lg" />
+                                </div>
+                            )}
+                            {items.map(item => (
+                                <p>
+                                    {item.title} <span>{item.sku}</span>{" "}
+                                    <span>{item.ebay_item_id}</span>
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                </main>
             </div>
         </>
     );

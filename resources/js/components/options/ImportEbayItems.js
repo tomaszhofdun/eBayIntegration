@@ -69,7 +69,6 @@ function ImportEbayItems() {
                         <button
                             data-tip="Click to save imported data to database"
                             className="btn btn--red btn--icon"
-                            // disabled={dataSaving ? "true" : "false"}
                             onClick={handleSaveToDatabase}
                         >
                             Zapisz do bazy

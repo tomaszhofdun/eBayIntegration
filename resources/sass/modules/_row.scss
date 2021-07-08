@@ -1,8 +1,8 @@
 .row {
     @include clearfix;
     &__4 {
-        // float: left;
-        // width: 33.33%;
+        float: left;
+        width: 33.33%;
         &--medium {
             background: $green;
             @include atMedium {
@@ -12,8 +12,8 @@
         }
     }
     &__6 {
-        // float: left;
-        // width: 50%;
+        float: left;
+        width: 50%;
         &--medium {
             background: $deep-saffron;
             @include atMedium {
@@ -23,8 +23,8 @@
         }
     }
     &__8 {
-        // float: left;
-        // width: 66.66%;
+        float: left;
+        width: 66.66%;
         &--medium {
             background: $warning;
             @include atMedium {

@@ -20,7 +20,6 @@ function App() {
             avatar: localStorage.getItem("appAvatar"),
             hashEmail: localStorage.getItem("hashEmail")
         },
-        sideBarIsVisible: true,
         flashMessage: ""
     };
     function ourReducer(state, action) {
