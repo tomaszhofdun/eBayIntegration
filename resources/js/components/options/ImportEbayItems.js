@@ -58,9 +58,13 @@ function ImportEbayItems() {
 
     return (
         <>
-            <button className="btn btn--blue" onClick={handleImportItems}>
+            <button
+                className="btn btn--blue btn--sm"
+                onClick={handleImportItems}
+            >
                 Importuj 200 aukcji
             </button>
+            <ConnectEbay />
             {dataLoaded ? (
                 <>
                     {dataSaving ? (
@@ -68,13 +72,14 @@ function ImportEbayItems() {
                     ) : (
                         <button
                             data-tip="Click to save imported data to database"
+                            data-for="buttons"
                             className="btn btn--red btn--icon"
                             onClick={handleSaveToDatabase}
                         >
                             Zapisz do bazy
                         </button>
                     )}
-                    <ReactTooltip />
+                    <ReactTooltip id="buttons" />
                 </>
             ) : (
                 ""
@@ -84,7 +89,7 @@ function ImportEbayItems() {
                     <LoadingIcon size="lg" />
                 </div>
             ) : (
-                <div className="table">
+                <div className="table table--absolute">
                     <table>
                         <thead className="table__head">
                             <tr>
@@ -120,5 +125,6 @@ function ImportEbayItems() {
     );
 }
 import { fromPairs } from "lodash";
+import ConnectEbay from "./ConnectEbay";
 
 export default ImportEbayItems;

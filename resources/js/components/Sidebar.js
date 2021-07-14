@@ -44,13 +44,13 @@ function Sidebar() {
                     <Link to={`${url}/products`}>
                         <li>
                             <i className="fas fa-folder"></i>
-                            Products <span>></span>
+                            Products <span>{">"}</span>
                         </li>
                     </Link>
                     <Link to={`${url}/options`}>
                         <li>
                             <i className="fas fa-cogs"></i>
-                            Options <span>></span>
+                            Options <span>{">"}</span>
                         </li>
                     </Link>
 

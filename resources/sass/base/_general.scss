@@ -75,6 +75,9 @@ i {
     padding: 10px;
     border: none;
     color: #fff;
+    &--sm {
+        padding: 4px;
+    }
     &--blue {
         background: $steel-blue;
         &:hover {
@@ -98,5 +101,25 @@ i {
         &:hover {
             background: darken($color: $warning, $amount: 14);
         }
+    }
+    &--grey {
+        background-color: #e8e8e8;
+        color: #2d353d;
+        border: 1px solid #a2a6ac;
+        &:hover {
+            background: darken($color: #e8e8e8, $amount: 14);
+        }
+    }
+
+    &--left-round {
+        border-top-left-radius: 20%;
+        border-bottom-left-radius: 20%;
+    }
+    &--right-round {
+        border-top-right-radius: 20%;
+        border-bottom-right-radius: 20%;
+    }
+    &--disabled {
+        opacity: 0;
     }
 }

@@ -100,7 +100,7 @@ function ConnectEbay() {
         <button
             disabled={state.connected && true}
             className={
-                "btn  " +
+                "btn btn--sm  " +
                 (state.connected == true ? "btn--green" : "btn--orange")
             }
             onClick={handleConnectChannel}

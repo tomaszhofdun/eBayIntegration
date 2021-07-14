@@ -4,7 +4,10 @@
         float: left;
         width: 33.33%;
         &--medium {
-            background: $green;
+            // background: $green;
+            @if $grid-borders {
+                border: 3px dotted blue;
+            }
             @include atMedium {
                 float: left;
                 width: 33.33%;
@@ -15,7 +18,11 @@
         float: left;
         width: 50%;
         &--medium {
-            background: $deep-saffron;
+            // background: $deep-saffron;
+            @if $grid-borders {
+                border: 3px dotted blue;
+            }
+
             @include atMedium {
                 float: left;
                 width: 50%;
@@ -26,7 +33,11 @@
         float: left;
         width: 66.66%;
         &--medium {
-            background: $warning;
+            // background: $warning;
+            @if $grid-borders {
+                border: 3px dotted blue;
+            }
+
             @include atMedium {
                 float: left;
                 width: 66.66%;

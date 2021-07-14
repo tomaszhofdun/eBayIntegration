@@ -1,0 +1,39 @@
+form {
+    padding: 20px;
+    input {
+        text-align: center;
+        margin: 10px auto;
+        display: inline-block;
+        max-width: 90%;
+    }
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    padding: 50px;
+    font-size: 20px;
+}
+.search-form {
+    margin-top: 10px;
+    // position: static;
+
+    position: sticky;
+    top: 74px;
+    z-index: 12;
+    @include atMedium {
+        left: 0;
+        margin: 0;
+        width: 100%;
+        top: 38px;
+    }
+    input {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+}

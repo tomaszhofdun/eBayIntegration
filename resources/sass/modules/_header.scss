@@ -1,16 +1,13 @@
 .header {
     color: #fff;
     background: $independence;
-    &__go-back-icon {
-        float: left;
-        top: 2px;
-        position: relative;
-        font-size: 36px;
-    }
-    .container {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    &__bar {
         @include atMedium {
             display: flex;
-            justify-content: right;
         }
     }
     i {
