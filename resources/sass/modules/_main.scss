@@ -2,7 +2,7 @@
     position: relative;
     padding-top: 80px;
     @include atMedium {
-        padding: 30px;
+        padding: 70px;
     }
     &__title {
         text-transform: uppercase;
@@ -11,7 +11,6 @@
     &__options {
         margin-top: 30px;
         display: flex;
-        // align-items: flex-start;
         align-items: center;
         justify-content: space-around;
         @include atMedium {

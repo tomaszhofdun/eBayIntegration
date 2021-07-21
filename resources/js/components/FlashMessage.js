@@ -1,24 +1,29 @@
 import React, { useContext, useEffect } from "react";
 import StateContext from "./StateContext";
 import DispatchContext from "./DispatchContext";
+import flashMessageIsActiveContext from "./flashMessageIsActiveContext";
 
-function FlashMessage() {
+function FlashMessage(props) {
     const appState = useContext(StateContext);
     const appDispatch = useContext(DispatchContext);
+    const appFlashMessageIsActive = useContext(flashMessageIsActiveContext);
 
     useEffect(() => {
-        setTimeout(() => {
-            appDispatch({ type: "flashMessage", value: false });
-        }, 4000);
+        clearTimeout(unmountTimer);
+        var unmountTimer = setTimeout(() => {
+            appDispatch({
+                type: "toggleFlashMessageVisibility",
+                active: false
+            });
+        }, 2500);
+        return () => {
+            clearTimeout(unmountTimer);
+        };
     }, []);
+
+    const { text, color } = props;
     return (
-        <div
-            className={
-                "flash-message flash-message--" + appState.flashMessage.color
-            }
-        >
-            {appState.flashMessage.text}
-        </div>
+        <div className={"flash-message flash-message--" + color}>{text}</div>
     );
 }
 

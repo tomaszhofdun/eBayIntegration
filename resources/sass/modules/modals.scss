@@ -1,5 +1,6 @@
 .flash-message {
     padding: 10px;
+    z-index: 1000;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -8,7 +9,6 @@
     text-align: center;
     color: #fff;
     text-transform: uppercase;
-    animation: example 4s ease-out 0s;
     &--red {
         background: $warning;
     }
@@ -16,21 +16,17 @@
         background: $green;
     }
 }
-
-@keyframes example {
-    0% {
-        top: -100px;
-        display: block;
-    }
-    15% {
-        top: 30px;
-    }
-    75% {
-        top: 30px;
-    }
-
-    100% {
-        top: -100px;
-        display: none;
-    }
+.flash-message-enter {
+    opacity: 0;
+}
+.flash-message-enter-active {
+    opacity: 1;
+    transition: opacity 700ms;
+}
+.flash-message-exit {
+    opacity: 1;
+}
+.flash-message-exit-active {
+    opacity: 0;
+    transition: opacity 700ms;
 }

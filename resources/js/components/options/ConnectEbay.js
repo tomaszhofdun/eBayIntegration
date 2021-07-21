@@ -29,8 +29,12 @@ function ConnectEbay() {
                     if (resp.data.Ack == "Failure") {
                         appDispatch({
                             type: "flashMessage",
-                            value: resp.data.Errors.ShortMessage,
+                            text: resp.data.Errors.ShortMessage,
                             color: "red"
+                        });
+                        appDispatch({
+                            type: "toggleFlashMessageVisibility",
+                            active: true
                         });
                         localStorage.removeItem("SessionID");
                     }
@@ -42,6 +46,10 @@ function ConnectEbay() {
                             type: "flashMessage",
                             value: "Połączenie zakończyło się sukcesem",
                             color: "green"
+                        });
+                        appDispatch({
+                            type: "toggleFlashMessageVisibility",
+                            active: true
                         });
                         localStorage.removeItem("SessionID");
                         localStorage.setItem("connected", true);

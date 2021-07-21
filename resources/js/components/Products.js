@@ -9,7 +9,6 @@ function Products() {
 
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [requestCount, setrequestCount] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(20);
 
@@ -21,9 +20,7 @@ function Products() {
                 }
             });
             setItems(response.data);
-            // console.log(response.data);
             setIsLoading(false);
-            setrequestCount(prev => prev + 1);
         }
         getItems();
     }, []);
@@ -32,11 +29,13 @@ function Products() {
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const amountOfPages = Math.ceil(items.length / itemsPerPage);
     const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
 
     function nextClickHandler() {
-        if (indexOfLastItem !== items.length) {
-            console.log("cos");
+        console.log(currentPage);
+        console.log(amountOfPages);
+        if (currentPage !== amountOfPages) {
             setCurrentPage(prev => prev + 1);
         }
     }
@@ -69,7 +68,12 @@ function Products() {
                                 </div>
                             ) : (
                                 <>
-                                    <p>{currentPage} page</p>
+                                    <p>
+                                        {" "}
+                                        {currentPage >= amountOfPages
+                                            ? "no results"
+                                            : currentPage + " page"}{" "}
+                                    </p>
                                     <button
                                         onClick={prevClickHandler}
                                         className={
@@ -84,8 +88,11 @@ function Products() {
                                         onClick={nextClickHandler}
                                         className={
                                             "btn btn--sm btn--grey btn--right-round ml-2 " +
-                                            (indexOfLastItem == items.length &&
+                                            (currentPage >= amountOfPages &&
                                                 "btn--disabled")
+                                        }
+                                        disabled={
+                                            currentPage >= amountOfPages && true
                                         }
                                     >
                                         Next

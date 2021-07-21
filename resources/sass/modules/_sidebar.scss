@@ -33,6 +33,9 @@
         a {
             color: #fff;
         }
+        li {
+            cursor: pointer;
+        }
         @include atMedium {
             display: flex;
             flex-wrap: wrap;
@@ -53,7 +56,8 @@
         z-index: 14;
         top: 10px;
         right: 10px;
-        @include atMedium {
+        &:hover {
+            cursor: pointer;
         }
         &::before {
             content: "";

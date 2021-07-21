@@ -1,12 +1,16 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
-import StateContext from "../StateContext";
 import ReactTooltip from "react-tooltip";
 
 import LoadingIcon from "../LoadingIcon";
+import ConnectEbay from "./ConnectEbay";
+
+import StateContext from "../StateContext";
+import DispatchContext from "../DispatchContext";
 
 function ImportEbayItems() {
     const appState = useContext(StateContext);
+    const appDispatch = useContext(DispatchContext);
 
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -47,9 +51,17 @@ function ImportEbayItems() {
                 }
             );
 
-            console.log(resp);
             if (resp.data == "Success") {
                 setDataSaving(false);
+                appDispatch({
+                    type: "flashMessage",
+                    text: "Imported items has been saved into the database",
+                    color: "green"
+                });
+                appDispatch({
+                    type: "toggleFlashMessageVisibility",
+                    active: true
+                });
             }
         } catch (err) {
             console.log(err);
@@ -124,7 +136,5 @@ function ImportEbayItems() {
         </>
     );
 }
-import { fromPairs } from "lodash";
-import ConnectEbay from "./ConnectEbay";
 
 export default ImportEbayItems;

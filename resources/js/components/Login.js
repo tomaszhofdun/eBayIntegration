@@ -29,7 +29,12 @@ function Login() {
                     hashEmail: md5(response.data.avatar).toString()
                 };
                 appDispatch({ type: "login", data: hashed });
-                appDispatch({ type: "flashMessage", value: false });
+                appDispatch({ type: "flashMessage" });
+
+                appDispatch({
+                    type: "toggleFlashMessageVisibility",
+                    active: true
+                });
             } else {
                 console.log(response.data.response);
                 setResponse(response);
@@ -37,7 +42,11 @@ function Login() {
         } catch (error) {
             appDispatch({
                 type: "flashMessage",
-                value: "Connection problem, check if Xampp is running"
+                text: "Connection problem, check if Xampp is running"
+            });
+            appDispatch({
+                type: "toggleFlashMessageVisibility",
+                active: true
             });
             setIsLoading(false);
         }

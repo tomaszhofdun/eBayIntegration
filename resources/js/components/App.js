@@ -1,6 +1,7 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 
 import Login from "./Login";
 import Dashboard from "./Dashboard";
@@ -20,8 +21,13 @@ function App() {
             avatar: localStorage.getItem("appAvatar"),
             hashEmail: localStorage.getItem("hashEmail")
         },
-        flashMessage: ""
+        flashMessage: {
+            text: "",
+            color: ""
+        },
+        flashMessageIsActive: false
     };
+
     function ourReducer(state, action) {
         switch (action.type) {
             case "login":
@@ -40,7 +46,15 @@ function App() {
             case "flashMessage":
                 return {
                     ...state,
-                    flashMessage: { text: action.value, color: action.color }
+                    flashMessage: {
+                        text: action.text,
+                        color: action.color
+                    }
+                };
+            case "toggleFlashMessageVisibility":
+                return {
+                    ...state,
+                    flashMessageIsActive: action.active
                 };
 
             case "hideSidebar":
@@ -96,8 +110,17 @@ function App() {
                             )}
                         </Route>
                     </Switch>
-
-                    {state.flashMessage && <FlashMessage />}
+                    <CSSTransition
+                        timeout={700}
+                        in={state.flashMessageIsActive}
+                        classNames="flash-message"
+                        unmountOnExit
+                    >
+                        <FlashMessage
+                            text={state.flashMessage.text}
+                            color={state.flashMessage.color}
+                        />
+                    </CSSTransition>
                 </BrowserRouter>
             </StateContext.Provider>
         </DispatchContext.Provider>

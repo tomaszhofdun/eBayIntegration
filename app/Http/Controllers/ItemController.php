@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Item;
+use Exception;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -26,12 +27,25 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'ebay_item_id' => 'required',
-            'sku' => 'required'
-        ]);
-        return Item::create($request->all());
+        try {
+            $request->validate([
+                'title' => 'required',
+                'sku' => 'required',
+                'quantity' => 'required',
+                'price' => 'required',
+            ]);
+
+           
+                return Item::create($request->all());
+           
+
+
+            
+        }
+        catch(Exception $ex) {
+            return $ex;
+        }
+        
     }
 
     /**
@@ -79,7 +93,7 @@ class ItemController extends Controller
      */
     public function search($name)
     {
-        return Item::where('title', 'like','%' .$name. '%')->orWhere('sku', 'like','%' .$name. '%')->get();
+        return Item::where('title', 'like','%' .$name. '%')->orWhere('sku', 'like','%' .$name. '%')->orWhere('ebay_item_id', 'like','%' .$name. '%')->get();
 
         
     }

@@ -2,8 +2,11 @@ import React from "react";
 import ReactTooltip from "react-tooltip";
 
 import Logout from "./Logout";
+import { Link, useRouteMatch } from "react-router-dom";
 
 function Header() {
+    const { url } = useRouteMatch();
+
     return (
         <header className="header">
             <div className="container header__bar">
@@ -14,16 +17,21 @@ function Header() {
                         id="icons"
                         className="fas fa-user"
                     ></i>
-                    <i
-                        data-tip="Settings"
-                        id="icons"
-                        className="fas fa-cogs"
-                    ></i>
-                    <i
-                        data-tip="Connect eBay"
-                        id="icons"
-                        className="fas fa-key"
-                    ></i>
+                    <Link to={`${url}/products`}>
+                        <i
+                            data-tip="My products"
+                            id="icons"
+                            className="fas fa-folder"
+                        ></i>
+                    </Link>
+                    <Link to={`${url}/options`}>
+                        <i
+                            data-tip="Settings"
+                            id="icons"
+                            className="fas fa-cogs"
+                        ></i>
+                    </Link>
+
                     <ReactTooltip effect="solid" type="info" data-for="icons" />
                     <Logout />
                 </div>

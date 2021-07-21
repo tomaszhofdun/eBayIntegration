@@ -20,8 +20,12 @@ function Sidebar() {
         appDispatch({ type: "logout" });
         appDispatch({
             type: "flashMessage",
-            value: "You've been logout",
+            text: "You've been logout",
             color: "red"
+        });
+        appDispatch({
+            type: "toggleFlashMessageVisibility",
+            active: true
         });
     }
 
