@@ -45,7 +45,7 @@ function Sidebar() {
                     <span>{appState.user.username}</span>
                 </div>
                 <ul className="nav__menu" onClick={menuHandler}>
-                    <Link to={`${url}/products`}>
+                    <Link to={`${url}/products/1`}>
                         <li>
                             <i className="fas fa-folder"></i>
                             Products <span>{">"}</span>

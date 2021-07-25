@@ -41,30 +41,3 @@
         float: right;
     }
 }
-.table {
-    font-size: 0.7rem;
-    margin: 20px auto;
-
-    &--absolute {
-        position: absolute;
-        top: 220px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    @include atMedium {
-        font-size: 1rem;
-    }
-
-    &__head {
-        background: darken($color: $green, $amount: 30);
-        color: #fff;
-    }
-    tr:nth-child(even) {
-        background: #e4e4e4;
-    }
-
-    th {
-        padding: 2px;
-    }
-}

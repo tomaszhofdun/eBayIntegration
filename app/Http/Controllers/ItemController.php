@@ -15,7 +15,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return $obiekt =  Item::all();
+        return $obiekt =  Item::orderBy('id', 'desc')->get();
 
     }
 

@@ -1,0 +1,31 @@
+.table {
+    font-size: 0.7rem;
+    margin: 20px auto;
+    padding: 20px;
+    input {
+        text-align: center;
+        margin: 10px auto;
+        display: inline-block;
+        max-width: 90%;
+    }
+    &--absolute {
+        position: absolute;
+        top: 160px;
+    }
+
+    @include atMedium {
+        font-size: 1rem;
+    }
+
+    &__head {
+        background: darken($color: $green, $amount: 30);
+        color: #fff;
+    }
+    tr:nth-child(even) {
+        background: #e4e4e4;
+    }
+
+    th {
+        padding: 2px;
+    }
+}

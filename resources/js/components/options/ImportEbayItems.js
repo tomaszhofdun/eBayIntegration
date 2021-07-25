@@ -116,7 +116,7 @@ function ImportEbayItems() {
                         <tbody>
                             {items.map((item, index) => (
                                 <tr>
-                                    <td>{index}</td>
+                                    <td>{index + 1}</td>
                                     <td>{item.SKU}</td>
                                     <td>
                                         <img

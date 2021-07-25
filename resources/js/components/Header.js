@@ -17,7 +17,7 @@ function Header() {
                         id="icons"
                         className="fas fa-user"
                     ></i>
-                    <Link to={`${url}/products`}>
+                    <Link to={`${url}/products/1`}>
                         <i
                             data-tip="My products"
                             id="icons"

@@ -8,7 +8,7 @@ function Content() {
     const { path } = useRouteMatch();
     return (
         <Switch>
-            <Route path={`${path}/products`}>
+            <Route path={`${path}/products/:page_number`}>
                 <Products />
             </Route>
             <Route path={`${path}/options/:ebayredirect?`}>

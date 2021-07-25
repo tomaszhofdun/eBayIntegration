@@ -71,6 +71,15 @@ i {
     }
 }
 
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    padding: 50px;
+    font-size: 20px;
+}
+
 .btn {
     padding: 10px;
     border: none;
@@ -121,6 +130,7 @@ i {
     }
     &--disabled {
         opacity: 0;
-        display: none;
+        cursor: default;
+        // display: none;
     }
 }
